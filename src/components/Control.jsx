@@ -10,7 +10,7 @@ const Control = ({ mode, length, onDecrement, onIncrement, isRunning }) => (
         id={`${mode}-decrement`}
         className='setting-button align-row'
         onClick={onDecrement}
-        disabled={length <= 0 || isRunning}
+        disabled={length <= 1 || isRunning}
       >
         <FontAwesomeIcon icon={faMinus} />
       </button>

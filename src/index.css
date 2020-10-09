@@ -64,13 +64,9 @@ button {
   font-size: 1rem;
 }
 
-.setting-button:hover:enabled {
-  transition: var(--transition);
-  background: var(--clr-disable);
-}
-
 .setting-button:disabled {
   opacity: 0.25;
+  cursor: default;
 }
 
 button:focus {
@@ -117,11 +113,6 @@ section {
   margin: auto 0.5rem;
 }
 
-.control-buttons > button:hover {
-  transition: var(--transition);
-  opacity: 0.6;
-}
-
 .setting > p {
   margin: auto 1.5rem;
   font-size: 2.5rem;
@@ -138,6 +129,18 @@ section {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media screen and (min-width: 900px) {
+  .control-buttons > button:hover {
+    transition: var(--transition);
+    opacity: 0.6;
+  }
+
+  .setting-button:hover:enabled {
+    transition: var(--transition);
+    background: var(--clr-disable);
+  }
 }
 
 @media screen and (max-width: 600px) {

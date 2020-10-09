@@ -1,5 +1,5 @@
 export const decrement = (number) => {
-  if (number <= 0) return;
+  if (number <= 1) return;
   return Number(number) - 1;
 }
 
