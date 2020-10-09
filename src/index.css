@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-work: #f9bf76;
+  --clr-break: #4f8b89;
+  --clr-disable: rgba(255, 255, 255, 0.2);
+  --transition: all 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100vw;
+  margin: 0;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+h3 {
+  margin-top: 0;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 10vw;
+  display: grid;
+  grid-template-rows: 15% 60% 20% 5%;
+  transition: var(--transition);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.work-background {
+  background: var(--clr-work);
+}
+.break-background {
+  background: var(--clr-break);
+}
+
+header > p {
+  margin-bottom: 0;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+.setting-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  font-size: 1rem;
+}
+
+.setting-button:hover:enabled {
+  transition: var(--transition);
+  background: var(--clr-disable);
+}
+
+.setting-button:disabled {
+  opacity: 0.25;
+}
+
+button:focus {
+  outline: 0;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+}
+
+.display {
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  border: 3px solid white;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.display h1 {
+  font-size: 4.5rem;
+}
+
+#timer-label {
+  opacity: 0.6;
+}
+
+#time-left {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 45% 10% 45%;
+}
+
+.controls {
+  width: 100%;
+  text-transform: capitalize;
+  gap: 2rem;
+  align-self: flex-start;
+}
+
+.control-buttons > button {
+  font-size: 1.6rem;
+  margin: auto 0.5rem;
+}
+
+.control-buttons > button:hover {
+  transition: var(--transition);
+  opacity: 0.6;
+}
+
+.setting > p {
+  margin: auto 1.5rem;
+  font-size: 2.5rem;
+}
+
+.align-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 0 2vw;
+  }
+
+  .setting > p {
+    margin: auto 1rem;
+    font-size: 2rem;
+  }
+
+  .setting-button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .display {
+    width: 19rem;
+    height: 19rem;
+  }
 }
